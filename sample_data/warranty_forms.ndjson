@@ -21,3 +21,4 @@
 {"claim": "CS-095-000", "appliance": "批号/1", "seller": "富达维修", "serial": "BB-05006", "symptom": "轻微抖动", "age_month": 19, "received": 86, "revision": 3, "inspection_fee": 5938, "safety": 0}
 {"claim": "CS-FUTURE", "appliance": "批号/3", "seller": "北站服务点", "serial": "BB-05002", "symptom": "不加热", "age_month": 31, "received": 91, "revision": 3, "inspection_fee": 5246, "safety": 0}
 {"claim": "BAD", "appliance": "批号/4", "seller": "富达维修", "serial": "BB-05009", "symptom": "门锁阻滞", "age_month": "NaN", "received": 83, "revision": 3, "inspection_fee": 6457, "safety": 0}
+{"claim": "CS-087-020", "appliance": "批号/7", "seller": "金翊服务", "serial": "BB-05019", "symptom": "不加热", "age_month": 16, "received": 84, "revision": 3, "inspection_fee": 5100, "safety": 0}

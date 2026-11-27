@@ -238,3 +238,13 @@
 {"work_order": "WX-0237", "family": "干衣机", "symptom": "不加热", "age_month": 4, "service_minutes": 72, "accepted": 50, "closed": 52, "authorized_published": 53, "solved": 0, "cost_cents": 38480, "firm": 1}
 {"work_order": "WX-0238", "family": "洗碗机", "symptom": "不制冷", "age_month": 17, "service_minutes": 95, "accepted": 61, "closed": 63, "authorized_published": 73, "solved": 1, "cost_cents": 44970, "firm": 1}
 {"work_order": "WX-0239", "family": "干衣机", "symptom": "轻微抖动", "age_month": 30, "service_minutes": 118, "accepted": 72, "closed": 74, "authorized_published": 75, "solved": 1, "cost_cents": 39860, "firm": 1}
+{"work_order": "WX-0240", "family": "消毒柜", "symptom": "不加热", "age_month": 9, "service_minutes": 46, "accepted": 8, "closed": 10, "authorized_published": 11, "solved": 1, "cost_cents": 21300, "firm": 1}
+{"work_order": "WX-0241", "family": "消毒柜", "symptom": "面板告警", "age_month": 14, "service_minutes": 58, "accepted": 19, "closed": 21, "authorized_published": 22, "solved": 1, "cost_cents": 18900, "firm": 1}
+{"work_order": "WX-0242", "family": "消毒柜", "symptom": "不加热", "age_month": 21, "service_minutes": 64, "accepted": 30, "closed": 32, "authorized_published": 33, "solved": 0, "cost_cents": 27600, "firm": 1}
+{"work_order": "WX-0243", "family": "消毒柜", "symptom": "门锁阻滞", "age_month": 5, "service_minutes": 38, "accepted": 41, "closed": 43, "authorized_published": 44, "solved": 1, "cost_cents": 15400, "firm": 1}
+{"work_order": "WX-0244", "family": "消毒柜", "symptom": "面板告警", "age_month": 12, "service_minutes": 71, "accepted": 52, "closed": 54, "authorized_published": 55, "solved": 0, "cost_cents": 24100, "firm": 1}
+{"work_order": "WX-0245", "family": "消毒柜", "symptom": "不加热", "age_month": 17, "service_minutes": 52, "accepted": 63, "closed": 65, "authorized_published": 66, "solved": 1, "cost_cents": 22800, "firm": 1}
+{"work_order": "WX-0246", "family": "消毒柜", "symptom": "面板告警", "age_month": 24, "service_minutes": 67, "accepted": 74, "closed": 76, "authorized_published": 77, "solved": 1, "cost_cents": 26500, "firm": 1}
+{"work_order": "WX-0247", "family": "消毒柜", "symptom": "不加热", "age_month": 8, "service_minutes": 44, "accepted": 76, "closed": 78, "authorized_published": 79, "solved": 0, "cost_cents": 19800, "firm": 1}
+{"work_order": "WX-0248", "family": "消毒柜", "symptom": "门锁阻滞", "age_month": 15, "service_minutes": 59, "accepted": 78, "closed": 80, "authorized_published": 81, "solved": 1, "cost_cents": 23200, "firm": 1}
+{"work_order": "WX-0249", "family": "消毒柜", "symptom": "面板告警", "age_month": 28, "service_minutes": 76, "accepted": 80, "closed": 82, "authorized_published": 83, "solved": 0, "cost_cents": 28900, "firm": 1}

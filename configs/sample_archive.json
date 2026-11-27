@@ -1,0 +1,15 @@
+{
+  "base_version": 3,
+  "min_series_samples": 6,
+  "published_orders": [
+    "WX-0037",
+    "WX-0038",
+    "WX-0040",
+    "WX-0041",
+    "WX-0048",
+    "WX-0053",
+    "WX-0240",
+    "WX-0241",
+    "WX-0242"
+  ]
+}

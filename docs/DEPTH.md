@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | M1 保修单 | 核保时点、筛出安全风险、把重复序列号送复核 | 运行证据第 1 段 | `src/warrantycost/warranty_claims/contracts.py` `src/warrantycost/warranty_claims/analysis.py` `src/warrantycost/warranty_claims/service.py` | `tests/test_warranty_claims.py` |
 | M2 机型映射 | 用生效版本解析兼容件，阻断重叠版本 | 运行证据第 2 段 | `src/warrantycost/model_aliases/contracts.py` `src/warrantycost/model_aliases/analysis.py` `src/warrantycost/model_aliases/service.py` | `tests/test_model_aliases.py` |
-| M3 返修样本 | 拆分可见、验证与不可使用的工单 | 运行证据第 3 段 | `src/warrantycost/repair_cohorts/contracts.py` `src/warrantycost/repair_cohorts/analysis.py` `src/warrantycost/repair_cohorts/service.py` | `tests/test_repair_cohorts.py` |
+| M3 返修样本 | 拆分可见、验证与不可使用的工单，把本班回写入档为可复现的训练样本版本 | 运行证据第 3 段 | `src/warrantycost/repair_cohorts/contracts.py` `src/warrantycost/repair_cohorts/analysis.py` `src/warrantycost/repair_cohorts/archive.py` `src/warrantycost/repair_cohorts/service.py` | `tests/test_repair_cohorts.py` `tests/test_sample_archive.py` |
 | M4 成本拟合 | 按产品系列拟合成本和换件无效概率 | 运行证据第 4 段 | `src/warrantycost/claim_cost_model/contracts.py` `src/warrantycost/claim_cost_model/analysis.py` `src/warrantycost/claim_cost_model/service.py` | `tests/test_claim_cost_model.py` |
 | M5 配件授权 | 按拆检费、预期浪费和实际库存批准 | 运行证据第 5 段 | `src/warrantycost/parts_authorization/contracts.py` `src/warrantycost/parts_authorization/analysis.py` `src/warrantycost/parts_authorization/service.py` | `tests/test_parts_authorization.py` |
 | M6 维修结算 | 核对结算组成与不可重复消费的授权额度 | 运行证据第 6 段 | `src/warrantycost/service_balance/contracts.py` `src/warrantycost/service_balance/analysis.py` `src/warrantycost/service_balance/service.py` | `tests/test_service_balance.py` |
@@ -25,3 +25,6 @@
 | TRAP-43 | 回放没有换件失败案例 | 召回率误显示为满分或崩溃 | 显式返回未知召回 | `src/warrantycost/claim_cost_model/analysis.py` | `tests/test_claim_cost_model.py::test_no_positive_repairs_reports_unknown_recall` |
 | TRAP-44 | 未见过工况恰好给低返修风险 | 无保护地批准更换 | 按训练统计量给分布外门槛 | `src/warrantycost/parts_authorization/analysis.py` | `tests/test_parts_authorization.py::test_high_confidence_outlier_is_never_automatically_approved` |
 | TRAP-53 | 把稀有工况放进评估批次 | 同单得到随同批其他单变化的打分 | 按固定模型逐条执行 | `src/warrantycost/claim_cost_model/analysis.py` | `tests/test_claim_cost_model.py::test_prediction_not_affected_by_other_service_case` |
+| TRAP-60 | 已发布模型样本被本班回写覆盖 | 历史模型的训练依据无法复原 | 保留旧版，回写留证隔离 | `src/warrantycost/repair_cohorts/archive.py` | `tests/test_sample_archive.py::test_published_sample_keeps_old_version_on_rewrite` |
+| TRAP-61 | 同一工单批内多次回写 | 入档结果受文件顺序影响 | 最新回写覆盖，其余作废留证 | `src/warrantycost/repair_cohorts/archive.py` | `tests/test_sample_archive.py::test_batch_superseded_writebacks_are_deterministic` |
+| TRAP-62 | 系列训练样本不足重拟合门槛 | 小样本强行重拟合失真 | 该系列仍按上一版模型授权 | `src/warrantycost/pipeline.py` | `tests/test_sample_archive.py::test_sparse_family_falls_back_to_previous_model_version` |

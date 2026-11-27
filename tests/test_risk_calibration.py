@@ -77,7 +77,7 @@ def test_runtime_replay_is_capacity_independent_and_traces_audit_groups():
     small,large=run(2),run(45)
     evidence=small["policy_replay"]
     assert evidence and evidence==large["policy_replay"]
-    assert {row["产品组"] for row in evidence}=={"冰箱","干衣机","洗碗机"}
+    assert {row["产品组"] for row in evidence}=={"冰箱","干衣机","洗碗机","消毒柜"}
     for family in {row["产品组"] for row in evidence}:
         rows=[row for row in evidence if row["产品组"]==family]
         assert len(rows)==6
@@ -104,7 +104,7 @@ def test_runtime_exposes_integral_source_delivery_and_residual_cost():
     assert len(tracked)>=5
     assert all(0<=item["原始风险"]<=1 for item in tracked)
     uncertainty=[row for row in fitted if "采纳校准" in row]
-    assert len(uncertainty)==3
+    assert len(uncertainty)==4
     assert all(row["support"]>=4 for row in uncertainty)
     assert all(row["residual_median"] is not None for row in uncertainty)
     assert any(row["预测元"] != row["原估计元"] for row in tracked)
